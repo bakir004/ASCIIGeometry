@@ -3,22 +3,40 @@
 #include "Point.h"
 #include "RotationMatrix.h"
 #include "Rotate.h"
+typedef std::vector<Point> Points;
 
-std::vector<Point> points;
+Points generateRingOfPointsAroundYAxis(Point origin, int numOfPointsAroundYAxis) {
 
-void generateDonutPoints(double donutRadius, double donutThicknessRadius) {
+}
+
+Points generatePointsAroundCenterOfDonutSlice(
+        double donutRadius,
+        double donutThicknessRadius,
+        int numOfPointsOnOriginalCircle,
+        int numOfPointsAroundYAxis
+    ) {
     Point origin(donutThicknessRadius,0,0);
-    int pointsOnOriginalCircle = 36;
 
-    for (int i = 0; i < pointsOnOriginalCircle; ++i) {
-        Point newPoint = rotate(origin, (double)i*360/pointsOnOriginalCircle, AroundZAxis);
+    Points points;
+    for (int i = 0; i < numOfPointsOnOriginalCircle; ++i) {
+        Point newPoint = rotate(origin, (double)i*360/numOfPointsOnOriginalCircle, AroundZAxis);
+        Point translatedPoint = newPoint + Point(donutRadius, 0, 0);
+        Points ringOfPoints = generateRingOfPointsAroundYAxis(translatedPoint, numOfPointsAroundYAxis);
         points.push_back(newPoint);
     }
+}
+
+Points generateDonutPoints(double donutRadius, double donutThicknessRadius) {
+    Points points;
+    int numOfPointsOnOriginalCircle = 36;
+    int numOfPointsAroundYAxis = 36;
+
+    points = generatePointsAroundCenterOfDonutSlice(donutRadius, donutThicknessRadius, numOfPointsOnOriginalCircle, numOfPointsAroundYAxis);
 
     for(Point point : points) {
         point.print();
     }
 
-//    origin.print();
+    return points;
 };
 
