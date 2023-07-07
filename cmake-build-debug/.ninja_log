@@ -1,0 +1,4 @@
+# ninja log v5
+1	195	7104721138159765	build.ninja	d83a1a96c931817e
+3	792	7104615254116687	CMakeFiles/ASCIIShapes.dir/main.cpp.obj	ea3f21d24abf16b
+792	924	7104615255396687	ASCIIShapes.exe	98538538ce81e3c5
