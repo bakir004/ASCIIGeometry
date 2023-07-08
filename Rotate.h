@@ -3,6 +3,8 @@
 #include "RotationMatrix.h"
 #include "Utils.h"
 
+typedef std::vector<double> ColumnVector;
+
 Point rotate(Point point, double angleAmountInDegrees, RotationAxisType type) {
     RotationMatrix rotationMatrix = RotationMatrix(angleAmountInDegrees, type);
     ColumnVector pointColumnVector = { point.x, point.y, point.z };
