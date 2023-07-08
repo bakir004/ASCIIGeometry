@@ -52,3 +52,9 @@ Points generateDonutPoints(double donutRadius, double donutThicknessRadius) {
     return generateRingOfPointsAroundZAxis(donutRadius, donutThicknessRadius, numOfPointsOnOriginalCircle, numOfPointsAroundYAxis);;
 };
 
+void translatePointsAlongZAxis(Points &points, double amount) {
+    for (Point & point : points) {
+        point = point + Point(0,0,amount);
+    }
+}
+

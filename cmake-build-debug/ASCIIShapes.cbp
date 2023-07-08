@@ -90,6 +90,9 @@
 		<Unit filename="C:/Users/pc/CLionProjects/ASCIIGeometry/ASCIIGeometry/Point.h">
 			<Option target="ASCIIShapes"/>
 		</Unit>
+		<Unit filename="C:/Users/pc/CLionProjects/ASCIIGeometry/ASCIIGeometry/Projection.h">
+			<Option target="ASCIIShapes"/>
+		</Unit>
 		<Unit filename="C:/Users/pc/CLionProjects/ASCIIGeometry/ASCIIGeometry/Rotate.h">
 			<Option target="ASCIIShapes"/>
 		</Unit>
