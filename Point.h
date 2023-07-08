@@ -2,31 +2,13 @@
 #include <vector>
 #include <cmath>
 #include <iostream>
+#include "Vector.h"
 
-class NormalVector {
-public:
-    double x, y, z;
-    double magnitude;
-
-    NormalVector(double x, double y, double z) {
-        this->x = x;
-        this->y = y;
-        this->z = z;
-        this->magnitude = sqrt(x*x+y*y+z*z);
-        normalize();
-    }
-private:
-    void normalize() {
-        this->x = this->x/magnitude;
-        this->y = this->y/magnitude;
-        this->z = this->z/magnitude;
-    }
-};
 
 class Point {
 public:
     double x, y, z;
-    NormalVector normalVector = NormalVector(1, 1, 1);
+    Vector surfaceNormal = Vector(1, 1, 1);
 
     Point(double x, double y, double z) {
         this->x = x;
@@ -35,7 +17,7 @@ public:
     }
 
     void print() const {
-        std::cout << "(" << this->x << ", " << this->y << ", " << this->z << ")" << std::endl;
+        std::cout << "(" << this->x << ", " << this->y << ", " << this->z << "), V: " << "(" << this->surfaceNormal.x << ", " << this->surfaceNormal.y << ", " << this->surfaceNormal.z << ")" << std::endl;
     }
 
     Point operator+(const Point &other) const {
