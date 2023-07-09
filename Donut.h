@@ -28,7 +28,7 @@ void render(double angleX, double angleZ) {
             int projectedX = (int) (screenWidthInPixels / 2 + finalPoint.x * distanceOfScreenFromViewer * ooz);
             int projectedY = (int) (screenHeightInPixels / 2 - finalPoint.y * distanceOfScreenFromViewer * ooz);
 
-            Point luminance = rotateOnAll3Axes(Point(cosAlpha, sinAlpha, 0), beta, angleX, angleZ);
+            Point luminance = rotateOnAll3Axes(Point(cosAlpha, sinAlpha, 0), angleX, beta, angleZ);
             Vector luminanceVector = Vector(luminance.x, luminance.y, luminance.z).normalize();
             double luminanceProduct = dot(luminanceVector, lightSourceVector);
             if (luminanceProduct > 0) {

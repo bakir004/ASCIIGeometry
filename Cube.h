@@ -72,7 +72,6 @@ void render(double angleX, double angleY, double angleZ) {
 void Cube() {
     double X = 0, Y = 0, Z = 0;
     double xIncrement=0.05, yIncrement=0.03, zIncrement=0.1;
-//    render(1,1,0);
     while(true) {
         render(X,Y,Z);
         X += xIncrement;
