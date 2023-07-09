@@ -1,3 +1,3 @@
-C:/Users/pc/CLionProjects/ASCIIGeometry/ASCIIGeometry/cmake-build-debug/CMakeFiles/ASCIIShapes.dir
-C:/Users/pc/CLionProjects/ASCIIGeometry/ASCIIGeometry/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/pc/CLionProjects/ASCIIGeometry/ASCIIGeometry/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Zakir/CLionProjects/ASCIIShapes/cmake-build-debug/CMakeFiles/ASCIIShapes.dir
+C:/Users/Zakir/CLionProjects/ASCIIShapes/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Zakir/CLionProjects/ASCIIShapes/cmake-build-debug/CMakeFiles/rebuild_cache.dir

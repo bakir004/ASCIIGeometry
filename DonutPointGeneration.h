@@ -17,7 +17,7 @@ Points generateRingOfPointsAroundYAxis(Point origin, int numOfPointsAroundYAxis,
     for (int i = 0; i < numOfPointsAroundYAxis; ++i) {
         double angleInDegrees = (double)i*360/numOfPointsAroundYAxis;
         Point newPoint = rotate(origin, angleInDegrees, AroundYAxis);
-        newPoint.surfaceNormal = calculateSurfaceNormal(newPoint, donutRadius, angleInDegrees);
+//        newPoint.surfaceNormal = calculateSurfaceNormal(newPoint, donutRadius, angleInDegrees);
         points.push_back(newPoint);
     }
 
