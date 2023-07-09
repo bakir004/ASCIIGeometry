@@ -3,4 +3,4 @@ project(ASCIIShapes)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ASCIIShapes main.cpp DonutPointGeneration.h Point.h Rotate.h RotationMatrix.h Utils.h Vector.h Projection.h PointRotation.h ATTEMPT2.h)
+add_executable(ASCIIShapes main.cpp Point.h Rotate.h Utils.h Vector.h)

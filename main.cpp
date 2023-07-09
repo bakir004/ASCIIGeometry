@@ -2,6 +2,9 @@
 #include <unistd.h>
 #include <cmath>
 #include <iostream>
+#include "Vector.h"
+#include "Point.h"
+#include "Rotate.h"
 
 #define PI 3.14159265
 double alphaSpacing = 0.07, betaSpacing = 0.02;
@@ -11,68 +14,7 @@ int screenWidthInPixels = 30;
 int screenHeightInPixels = 25;
 double distanceOfScreenFromViewer = 16;
 
-class Point {
-public:
-    double x, y, z;
-
-    Point(double x, double y, double z) {
-        this->x = x;
-        this->y = y;
-        this->z = z;
-    }
-
-    void print() const {
-        std::cout << "(" << this->x << ", " << this->y << ", " << this->z << ")" << std::endl;
-    }
-
-    Point operator+(const Point &other) const {
-        Point result = Point(this->x + other.x, this->y + other.y, this->z + other.z);
-        return result;
-    }
-};
-
-class Vector {
-public:
-    double x, y, z;
-    double magnitude;
-
-    Vector(double x, double y, double z) {
-        this->x = x;
-        this->y = y;
-        this->z = z;
-        this->magnitude = sqrt(x*x+y*y+z*z);
-    }
-    Vector normalize() const {
-        return {this->x/this->magnitude,this->y/this->magnitude,this->z/this->magnitude};
-    }
-};
 Vector lightSourceVector = Vector(0,1,-1).normalize();
-
-Point rotateX(Point point, double angle) {
-    double cosine = cos(angle);
-    double sine = sin(angle);
-    return {point.x, point.y*cosine + point.z*sine, -point.y*sine + point.z*cosine};
-}
-Point rotateY(Point point, double angle) {
-    double cosine = cos(angle);
-    double sine = sin(angle);
-    return {point.x*cosine + point.z*sine, point.y, -point.x*sine + point.z*cosine};
-}
-Point rotateZ(Point point, double angle) {
-    double cosine = cos(angle);
-    double sine = sin(angle);
-    return {point.x*cosine + point.y*sine, -point.x*sine + point.y*cosine, point.z};
-}
-Point rotateOnAll3Axes(Point point, double angleY, double angleX, double angleZ) {
-    point = rotateY(point, angleY);
-    point = rotateX(point, angleX);
-    point = rotateZ(point, angleZ);
-    return point;
-}
-
-double dot(Vector a, Vector b) {
-    return a.x*b.x + a.y*b.y + a.z*b.z;
-}
 
 void render(double angleX, double angleZ) {
     std::vector<std::vector<double>> zDistances(screenHeightInPixels, std::vector<double>(screenWidthInPixels, 0));
