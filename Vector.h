@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <vector>
 
 class Vector {
 public:
@@ -16,3 +17,5 @@ public:
         return {this->x/this->magnitude,this->y/this->magnitude,this->z/this->magnitude};
     }
 };
+
+typedef std::vector<Vector> Vectors;

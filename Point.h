@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Vector.h"
 
+
 class Point {
 public:
     double x, y, z;
@@ -23,3 +24,5 @@ public:
         return result;
     }
 };
+
+typedef std::vector<Point> Points;
